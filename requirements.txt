@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+huggingface_hub
+onnxruntime
+opencv-python-headless
+pyclipper
+numpy
+pillow
