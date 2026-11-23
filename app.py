@@ -27,10 +27,11 @@ def get_ocr():
         repo_id=MODEL_ID,
         revision=MODEL_REVISION,
         allow_patterns=[
-            "*.onnx",
-            "*.json",
-            "*.txt",
-            "runtime/*.py"
+    "*.onnx",
+    "*.json",
+    "*.txt",
+    "*.yml",
+    "runtime/*.py"  
         ]
     )
 
