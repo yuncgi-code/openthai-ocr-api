@@ -10,12 +10,13 @@ from huggingface_hub import snapshot_download
 from PIL import Image, UnidentifiedImageError
 
 app = FastAPI(
-    title="OpenThai 2.1 OCR API",
+    title="OpenThai 2.2 OCR API",
     version="1.0.0"
 )
 
-MODEL_ID = "iapp/OpenThai2.1-OCR-Text-20261118"
-MODEL_REVISION = "v2.1.4"
+MODEL_ID = "iapp/OpenThai2.2-OCR-Text-20261127"
+MODEL_REVISION = "v2.2.1"
+
 MAX_FILE_SIZE = 5 * 1024 * 1024
 
 ocr_lock = threading.Lock()
@@ -46,7 +47,7 @@ def get_ocr():
 def home():
     return {
         "status": "online",
-        "service": "OpenThai 2.1 OCR API",
+        "service": "OpenThai 2.2 OCR API",
         "model": MODEL_ID,
         "version": MODEL_REVISION
     }
@@ -112,7 +113,7 @@ def recognize(
             "text": result.get("text", ""),
             "lines": result.get("lines", []),
             "rotation": result.get("rotation", 0),
-            "engine": "OpenThai 2.1 OCR Text"
+            "engine": "OpenThai 2.2 OCR Text"
         }
 
     except Exception:
